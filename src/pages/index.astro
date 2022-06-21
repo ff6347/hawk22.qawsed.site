@@ -1,38 +1,121 @@
 ---
+import { faker } from "@faker-js/faker";
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+interface Student {
+	title: string;
+	description: string;
+	authors: { name: string; github: string }[],
+	url: string;
+	source: string
+}
+const dataset = {
+	q: ["Quantum", "Quantitive", "Query"],
+	a: ["Async", "Automatic", "Autonomous"],
+	w: ["Wild", "Wobbely", "Wired"],
+	s: ["Supercharge", "Steroids", "Simple"],
+	e: ["Explore", "Endangered"],
+	d: ["Documentation"],
+}
+const acronym = (Object.keys(dataset)).map((key) => dataset[key][Math.floor(Math.random() * dataset[key].length)]);//?
+const createStudent = () => {
+	return {
+		title: faker.word.noun(),
+		description: faker.lorem.paragraph(),
+		authors: [{
+			name: faker.internet.userName(),
+			github: faker.internet.emoji()
+		}],
+		source: "https://github.com/ff6347",
+		url: faker.internet.url(),
+	}
+
+}
+const projects: Student[] = [];
+for (let i = 0; i < 10; i++) {
+	projects.push(createStudent());
+}
+
 ---
 
-<Layout title="Welcome to qawsed.site">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Layout title="q.a.w.s.e.d.site">
+	<div class="overlay text-8xl font-black"><div class="overlay-content"></div></div>
 	<main>
-		<h1>Welcome to <span class="text-gradient">qawsed.site</span></h1>
-		<p class="instructions">
-			Nothing to see here. We'll update this soon(-ish).
+		<h1 class="text-2xl pb-1">Welcome to <span class="text-gradient">qawsed.site</span></h1>
+		<h2 class="text-xl font-semibold pb-5">The: {acronym.join(" ")}</h2>
+		<p>
+			Totally inspired by <a class="instructions" href="https://tholman.com/">Tim Holmans</a> <a  class="instructions" href="https://theuselessweb.com/">"The Useless Web"</a>
 		</p>
-		<!-- <ul role="list" class="link-card-grid">
-			<Card href="https://docs.astro.build/" title="Documentation"
-				body="Learn how Astro works and explore the official API docs." />
-			<Card href="https://astro.build/integrations/" title="Integrations"
-				body="Supercharge your project with new frameworks and libraries." />
-			<Card href="https://astro.build/themes/" title="Themes"
-				body="Explore a galaxy of community-built starter themes." />
-			<Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" /> -->
-		<!-- </ul> -->
+		<div class="link-card-grid">
+			{projects.map(project => <Card title={project.title} body={project.description} href={project.url}/>)}
+		</div>
 	</main>
+	<footer>
+		<div><span>The end</span></div>
+	</footer>
+	<script is:inline>
+		document.addEventListener("DOMContentLoaded",()=>{
+			const overlay = document.querySelector(".overlay-content");
+			const countdown = [5,4,3,"▲","△", "<⤵︎>", "Ready?", "GO!","Now!!"];
+			let counter = 0;
+			const interval = setInterval(()=>{
+				const content = countdown[counter];
+				overlay.innerText = content;
+				counter++;
+				if(counter=== countdown.length){
+					clearInterval(interval);
+				}
+			}, 500);
+			setTimeout(()=>{
+				const overlay = document.querySelector(".overlay");
+				overlay.remove()
+			},5000)
+		})
+	</script>
+	<script is:inline>
+		document.addEventListener('DOMContentLoaded', () => {
+			const gridElements = document.querySelector(".link-card-grid");
+			for(let i = gridElements.length - 1; i >= 0; i--) {
+				gridElements.appendChild(gridElements.chldren[Math.random() * i | 0 ])
+			}
+		});
+	</script>
 </Layout>
 
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4F39FA, #DA62C4);
+<style is:global>
+		:root {
+		--primary-color: #4F39FA;
+		--secondary-color: #DA62C4;
+		--text-on-dark-color: #fffdd8;
+		--astro-gradient: linear-gradient(0deg, var(--primary-color),var(--secondary-color));
 	}
+	</style>
+<style>
+
+
 
 	h1 {
-		margin: 2rem 0;
+		margin: 2rem 0 0 0;
 	}
-
 	main {
+
 		margin: auto;
-		padding: 1em;
+		/* padding: 1em; */
 		max-width: 60ch;
 	}
 
@@ -47,6 +130,52 @@ import Card from '../components/Card.astro';
 		animation: pulse 4s ease-in-out infinite;
 	}
 
+	footer {
+		margin-top: 10rem;
+		height: 120rem;
+		background-color: var(--primary-color);
+		width: 100%;
+		border-top: 1rem solid var(--secondary-color);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 1rem;
+	}
+	footer > div {
+
+		justify-content: flex-end;
+		align-self: flex-end;
+		color: var(--text-on-dark-color);
+		text-transform:uppercase;
+	}
+
+	.overlay {
+    background-color:var(--text-on-dark-color);
+    width:100%;
+    height:100%;
+    z-index:10;
+    top:0;
+    left:0;
+    position:fixed;
+		animation: fadeout 0.1s ease-in 5s forwards;
+		animation-fill-mode: forwards;
+		display:flex;
+		justify-content:center;
+
+
+
+	}
+	.overlay-content{
+		align-self: center;
+	}
+	@keyframes fadeout {
+    to {
+			opacity: 0;
+        /* width:0;
+        height:0;
+        overflow:hidden; */
+    }
+}
 	@keyframes pulse {
 
 		0%,
@@ -62,7 +191,7 @@ import Card from '../components/Card.astro';
 	.instructions {
 		line-height: 1.6;
 		margin: 1rem 0;
-		background: #4F39FA;
+		background: var(--primary-color);
 		padding: 1.0rem;
 		border-radius: 0.4rem;
 		color: var(--color-bg);
@@ -78,7 +207,7 @@ import Card from '../components/Card.astro';
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
+		gap: 0rem;
 		padding: 0;
 	}
 </style>
