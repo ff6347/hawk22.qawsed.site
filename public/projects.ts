@@ -8,7 +8,7 @@ interface Project {
 	authors: Author[];
 	source: string;
 }
-export const projects = [
+export const projects: Project[] = [
 	{
 		title: "",
 		description: "",
@@ -18,6 +18,6 @@ export const projects = [
 				github: "",
 			},
 		],
-		sorurce: "",
+		source: "",
 	},
 ];
