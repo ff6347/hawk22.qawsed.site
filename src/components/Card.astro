@@ -23,11 +23,15 @@ const authorsList = formatter.format(list);
 			<span>&rarr;</span>
 		</h2>
 	</a>
+
 	<p class="authors" set:html={authorsList}>
 	</p>
 	<p>
 		{body}
 	</p>
+	<a href={source} class="source">
+		<span>source <span>&rarr;</span></span>
+	</a>
 </div>
 <style>
 	:root {
@@ -89,9 +93,19 @@ const authorsList = formatter.format(list);
 		background-position: 0;
 	}
 
-	span.author {
+	.author>a {
 		color: var(--red-crayola);
-		text-decoration: underline;
+		text-decoration: underline !important;
 		margin-right: 0.5rem;
 	}
+
+	a.source {
+		font-size: 1rem;
+
+		text-decoration: underline !important;
+	}
+
+	/* a.source:hover {
+		font-weight: bold;
+	} */
 </style>
