@@ -18,19 +18,64 @@ const { title } = Astro.props as Props;
 
 <body>
   <slot />
+  <footer class="line-thin">
+    <div>
+      <p class="">
+        All content is built during the seminar "Das Nutzlose Netz - Grundlagen der Codierung / Grundlagen der 3D
+        Gestaltung (Modul 112 Generative Gestaltung)" at the University of Applied Sciences
+        Hildesheim/Holzminden/Göttingen (<a href="https://www.hawk.de/en">HAWK</a>).
+      </p>
+    </div>
+    <div class="footer__end-wrapper">
+
+      <div><span class="footer__text--strong text-9xl">The end</span></div>
+    </div>
+  </footer>
 </body>
 
 </html>
 
+<style is:global>
+  .line-thin {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: solid 2px var(--yellow-green);
+
+  }
+</style>
+
 <style>
+  @font-face {
+    font-family: "Press Start";
+    src:
+      url("/assets/fonts/PressStart2P-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Cabin Sketch";
+    src:
+      url("/assets/fonts/CabinSketch-Bold.ttf") format("truetype");
+  }
+
+
   :root {
     --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
     --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-    --color-text: hsl(12, 5%, 4%);
-    --color-bg: hsl(10, 21%, 95%);
-    --color-border: hsl(17, 24%, 90%);
+    --pink-lace: #f2d7eeff;
+    --yellow-green: #85cb33ff;
+    --dark-purple: #27233aff;
+    --red-crayola: #ec0b43ff;
+    --sizzling-red: #e84855ff;
+
+    --color-text: var(--dark-purple));
+    -color-bg: white;
+    /* - var(--pink-lace); */
+    --color-border: lighten(var(--color-bg), 10%);
+    --primary-color: var(--red-crayola);
+    --secondary-color: var(--yellow-green);
+    --text-on-dark-color: var(--pink-lace);
+    --primary-gradient: linear-gradient(0deg, var(--primary-color), var(--secondary-color));
   }
 
   html {
@@ -40,17 +85,68 @@ const { title } = Astro.props as Props;
     background-color: var(--color-bg);
   }
 
+
   body {
-    margin: 0;
+    margin: 0 auto;
     border-top: 1rem solid var(--primary-color);
+  }
+
+  a {
+
+    background: linear-gradient(to right, var(--secondary-color) 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: underline !important;
+  }
+
+  a:hover {
+    background-position: 0 100%;
+  }
+
+  footer {
+    margin-top: 10rem;
+    background-color: var(--primary-color);
+    border-top: 1rem solid var(--secondary-color);
+    padding: 1rem;
+    color: var(--pink-lace);
+  }
+
+
+
+  .footer__end-wrapper {
+    width: 100%;
+    height: 120rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .footer__text--strong {
+    text-transform: uppercase;
+    font-family: "Cabin Sketch";
+  }
+
+  div.end {
+
+    justify-content: flex-end;
+    align-self: flex-end;
+    color: var(--text-on-dark-color);
+
   }
 
   :global(h1) {
     font-size: var(--font-size-xl);
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: normal;
+    text-transform: uppercase;
   }
 
   :global(h2) {
     font-size: var(--font-size-lg);
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: normal;
+
   }
 
   :global(code) {

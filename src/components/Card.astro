@@ -3,46 +3,55 @@ export interface Props {
 	title: string,
 	body: string,
 	href: string,
+	authors: { name: string; github: string }[],
+	source: string,
 }
-const { href, title, body } = Astro.props;
+const { href, title, body, authors, source } = Astro.props;
+
+const list = authors.map(({ name, github }) => {
+	return `<span class="author"><a href=${github}>${name}</a></span>`
+});
+const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+const authorsList = formatter.format(list);
+
 ---
 
-<div class="link-card">
-	<a href={href}>
+<div class="link-card line-thin">
+	<a href={href} class="no-animation">
 		<h2>
 			{title}
 			<span>&rarr;</span>
 		</h2>
-		<p>
-			{body}
-		</p>
 	</a>
+	<p class="authors" set:html={authorsList}>
+	</p>
+	<p>
+		{body}
+	</p>
 </div>
 <style>
 	:root {
-		--link-gradient: linear-gradient(45deg, #4F39FA, #DA62C4 30%, var(--color-border) 60%);
+		--link-gradient: linear-gradient(45deg, var(--primary-color), var(--secondary-color) 30%, var(--color-border) 60%);
 	}
 
 	.link-card {
 		list-style: none;
 		display: flex;
+		flex-direction: column;
 		padding: 1rem;
 		background-image: var(--link-gradient);
 		background-size: 400%;
-		/* border-radius: 0.5rem; */
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		background-color: white;
+
 	}
 
 	.link-card>a {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
-		padding: 1em 1.3em;
-		/* border-radius: 0.35rem; */
 		color: var(--text-color);
-		background-color: white;
-		opacity: 0.8;
 	}
 
 	h2 {
@@ -65,10 +74,24 @@ const { href, title, body } = Astro.props;
 	}
 
 	.link-card:is(:hover, :focus-within) h2 {
-		color: #4F39FA;
+		color: var(--primary-color);
 	}
 
 	.link-card:is(:hover, :focus-within) h2 span {
 		transform: translateX(2px);
+	}
+
+	a.no-animation {
+		background: none;
+	}
+
+	a.no-animation:hover {
+		background-position: 0;
+	}
+
+	span.author {
+		color: var(--red-crayola);
+		text-decoration: underline;
+		margin-right: 0.5rem;
 	}
 </style>

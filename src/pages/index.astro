@@ -25,6 +25,9 @@ const createStudent = () => {
 		authors: [{
 			name: faker.internet.userName(),
 			github: faker.internet.emoji()
+		}, {
+			name: faker.internet.userName(),
+			github: faker.internet.emoji()
 		}],
 		source: "https://github.com/ff6347",
 		url: faker.internet.url(),
@@ -40,21 +43,24 @@ for (let i = 0; i < 10; i++) {
 
 
 
+
+
+
+
+
 <Layout title="q.a.w.s.e.d.site">
 	<div class="overlay text-8xl font-black"><div class="overlay-content"></div></div>
-	<main>
+	<main class="p-4">
 		<h1 class="text-2xl pb-1">Welcome to <span class="text-gradient">qawsed.site</span></h1>
 		<h2 class="text-xl font-semibold pb-5">The: {acronym.join(" ")}</h2>
 		<p>
-			Totally inspired by <a class="instructions" href="https://tholman.com/">Tim Holmans</a> <a  class="instructions" href="https://theuselessweb.com/">"The Useless Web"</a>
+			Totally inspired by <a class="" href="https://tholman.com/">Tim Holmans</a> <a  class="" href="https://theuselessweb.com/">"The Useless Web"</a>
 		</p>
 		<div class="link-card-grid">
-			{projects.map(project => <Card title={project.title} body={project.description} href={project.url}/>)}
+			{projects.map(project => <Card title={project.title} body={project.description} href={project.url} authors={project.authors} source={project.source}/>)}
 		</div>
 	</main>
-	<footer>
-		<div><span>The end</span></div>
-	</footer>
+
 	<script is:inline>
 		document.addEventListener("DOMContentLoaded",()=>{
 			const overlay = document.querySelector(".overlay-content");
@@ -82,16 +88,19 @@ for (let i = 0; i < 10; i++) {
 			}
 		});
 	</script>
+	<script is:inline>
+		document.addEventListener('DOMContentLoaded', () => {
+			const borderThinElements = document.querySelectorAll(".line-thin");
+			console.log(borderThinElements);
+			for(let i = borderThinElements.length - 1; i >= 0; i--) {
+				const r1 = 10 + Math.random() * 100;
+				const r2 = 200 + Math.random() * 50;
+				const r3 = 100 + Math.random() * 100;
+				borderThinElements[i].style.borderRadius = `${r2}px ${r1}px ${r3}px ${r1}px/${r1}px ${r3}px ${r1}px ${r2}px`;
+			}
+		})
+	</script>
 </Layout>
-
-<style is:global>
-		:root {
-		--primary-color: #4F39FA;
-		--secondary-color: #DA62C4;
-		--text-on-dark-color: #fffdd8;
-		--astro-gradient: linear-gradient(0deg, var(--primary-color),var(--secondary-color));
-	}
-	</style>
 <style>
 
 
@@ -101,14 +110,14 @@ for (let i = 0; i < 10; i++) {
 	}
 	main {
 
-		margin: auto;
+		margin: 0 auto;
 		/* padding: 1em; */
-		max-width: 60ch;
+		max-width: 80ch;
 	}
 
 	.text-gradient {
 		font-weight: 900;
-		background-image: var(--astro-gradient);
+		background-image: var(--primary-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 100% 200%;
@@ -117,24 +126,7 @@ for (let i = 0; i < 10; i++) {
 		animation: pulse 4s ease-in-out infinite;
 	}
 
-	footer {
-		margin-top: 10rem;
-		height: 120rem;
-		background-color: var(--primary-color);
-		width: 100%;
-		border-top: 1rem solid var(--secondary-color);
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-		padding: 1rem;
-	}
-	footer > div {
 
-		justify-content: flex-end;
-		align-self: flex-end;
-		color: var(--text-on-dark-color);
-		text-transform:uppercase;
-	}
 
 	.overlay {
     background-color:var(--text-on-dark-color);
@@ -194,7 +186,10 @@ for (let i = 0; i < 10; i++) {
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 0rem;
+		gap: 1rem;
 		padding: 0;
+	}
+	a{
+		text-decoration: underline;
 	}
 </style>
