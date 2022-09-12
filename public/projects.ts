@@ -21,4 +21,16 @@ export const projects: Project[] = [
 		source: "https://github.com/hawk-de/nutzloses-netz-marthaloh",
 		url: "https://typetodelete.com",
 	},
+	{
+    "title": "Frogchestra",
+    "description": "Frogchestra is an online desktop application where all the keys in your piano are frogs, and you can play them with your keyboard. Play your favourite songs, compose thoughtful moonlight sonatas, or just hit random keys to create a unique atmosphere.",
+    "authors": [
+        {
+            "name": "Simon Keller",
+            "github": "https://github.com/simonster12"
+        }
+    ],
+    "source": "https://github.com/hawk-de/nutzloses-netz-simonster12",
+    "url": "https://frogchestra.site/"
+}
 ];
