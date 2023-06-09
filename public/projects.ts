@@ -30,11 +30,11 @@ export const projects: Project[] = [
 		authors: [
 			{
 				name: "Mia Vogl",
-				github: "miamogl",
+				github: "https://github.com/miamogl",
 			},
 			{
-				name: "Mia Vogl",
-				github: "Cherise Barthel",
+				name: "Cherise Barthel",
+				github: "https://github.com/Cherise",
 			},
 		],
 		source: "https://github.com/hawk-de/nutzloses-netz-cherise-mia",
@@ -65,8 +65,8 @@ export const projects: Project[] = [
 		description: "Shoot the target.",
 		authors: [
 			{
-				name: "JoshuaNiemann",
-				github: "Joshua Niemann",
+				name: "Joshua Niemann",
+				github: "https://github.com/JoshuaNiemann",
 			},
 		],
 		url: "https://trickytarget.art/",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
 		authors: [
 			{
 				name: "Hauke Rosendahl",
-				github: "HaukeRosendahl",
+				github: "https://github.com/HaukeRosendahl",
 			},
 		],
 		description:
