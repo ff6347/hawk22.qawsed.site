@@ -9,11 +9,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "3.0.2",
+    "@astrojs/sitemap": "3.0.3",
     "@astrojs/solid-js": "3.0.2",
     "@astrojs/tailwind": "5.0.2",
     "@faker-js/faker": "8.2.0",
-    "astro": "3.3.4",
-    "solid-js": "1.8.3"
+    "astro": "3.4.3",
+    "solid-js": "1.8.5"
   }
 }
