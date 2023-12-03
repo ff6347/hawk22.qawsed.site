@@ -13,7 +13,7 @@
     "@astrojs/solid-js": "3.0.2",
     "@astrojs/tailwind": "5.0.2",
     "@faker-js/faker": "8.3.1",
-    "astro": "3.5.5",
-    "solid-js": "1.8.5"
+    "astro": "3.6.4",
+    "solid-js": "1.8.7"
   }
 }
