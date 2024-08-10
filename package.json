@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "3.1.6",
-    "@astrojs/solid-js": "3.0.3",
+    "@astrojs/solid-js": "4.4.1",
     "@astrojs/tailwind": "5.1.0",
     "@faker-js/faker": "8.4.1",
-    "astro": "3.6.5",
+    "astro": "4.13.3",
     "solid-js": "1.8.19"
   }
 }
