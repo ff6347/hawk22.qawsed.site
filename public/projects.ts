@@ -38,7 +38,7 @@ export const projects: Project[] = [
 			},
 		],
 		source: "https://github.com/hawk-de/nutzloses-netz-cherise-mia",
-		url: "https://youwasteyourti.me/",
+		url: "https://hawk-de.github.io/nutzloses-netz-cherise-mia/",
 	},
 	{
 		title: "Frogchestra",
