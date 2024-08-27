@@ -51,7 +51,7 @@ export const projects: Project[] = [
 			},
 		],
 		source: "https://github.com/hawk-de/nutzloses-netz-simonster12",
-		url: "https://frogchestra.site/",
+		url: "https://hawk-de.github.io/nutzloses-netz-simonster12/",
 	},
 	{
 		authors: [{ github: "Liarikai", name: "Natallia" }],
