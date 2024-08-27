@@ -21,7 +21,7 @@ export const projects: Project[] = [
 			},
 		],
 		source: "https://github.com/hawk-de/nutzloses-netz-marthaloh",
-		url: "https://typetodelete.com",
+		url: "https://hawk-de.github.io/nutzloses-netz-marthaloh/",
 	},
 	{
 		title: "YOU WASTE YOUR TIME",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
 	},
 	{
 		authors: [{ github: "Liarikai", name: "Natallia" }],
-		url: "https://www.beamenace.lol/",
+		url: "https://hawk-de.github.io/nutzloses-netz-Liarikai/",
 		source: "https://github.com/hawk-de/nutzloses-netz-Liarikai",
 		title: "Be a Menace",
 		description: `A mildly entertaining website that you'll visit once, maybe twice, and then never return to it again, because why would you. It's a useless website after all, and you probably have some more important stuff to do than annoying a blue hand-animated troll.`,
@@ -69,7 +69,7 @@ export const projects: Project[] = [
 				github: "https://github.com/JoshuaNiemann",
 			},
 		],
-		url: "https://trickytarget.art/",
+		url: "https://hawk-de.github.io/nutzloses-netz-JoshuaNiemann/",
 		source: "https://github.com/hawk-de/nutzloses-netz-JoshuaNiemann",
 	},
 	{
@@ -81,7 +81,7 @@ export const projects: Project[] = [
 		],
 		description:
 			"Trash-Collector is a game where you control a spaceship. Your mission is to get rid of all the trash in space. You do that by shooting the trash with a laser.",
-		url: "https://trash-collector.art/",
+		url: "https://hawk-de.github.io/nutzloses-netz-HaukeRosendahl/web3/",
 		source: "https://github.com/hawk-de/nutzloses-netz-HaukeRosendahl",
 		title: "Trash Collector",
 	},
