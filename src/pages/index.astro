@@ -1,200 +1,179 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { projects } from "../../public/projects";
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { projects } from '../../public/projects';
 interface Student {
-	title: string;
-	description: string;
-	authors: { name: string; github: string }[];
-	url: string;
-	source: string;
+  title: string;
+  description: string;
+  authors: { name: string; github: string }[];
+  url: string;
+  source: string;
 }
 const dataset = {
-	q: ["Quantum", "Quantitive", "Query"],
-	a: ["Async", "Automatic", "Autonomous"],
-	w: ["Wild", "Wobbely", "Wired"],
-	s: ["Supercharge", "Steroids", "Simple"],
-	e: ["Explore", "Endangered"],
-	d: ["Documentation"],
+  q: ['Quantum', 'Quantitive', 'Query'],
+  a: ['Async', 'Automatic', 'Autonomous'],
+  w: ['Wild', 'Wobbely', 'Wired'],
+  s: ['Supercharge', 'Steroids', 'Simple'],
+  e: ['Explore', 'Endangered'],
+  d: ['Documentation'],
 };
 const acronym = Object.keys(dataset).map(
-	(key) => dataset[key][Math.floor(Math.random() * dataset[key].length)],
+  (key) => dataset[key][Math.floor(Math.random() * dataset[key].length)],
 ); //?
-// const createStudent = () => {
-// 	return {
-// 		title: faker.word.noun(),
-// 		description: faker.lorem.paragraph(),
-// 		authors: [{
-// 			name: faker.internet.userName(),
-// 			github: faker.internet.emoji()
-// 		}, {
-// 			name: faker.internet.userName(),
-// 			github: faker.internet.emoji()
-// 		}],
-// 		source: "https://github.com/ff6347",
-// 		url: faker.internet.url(),
-// 	}
-
-// }
-// const projects: Student[] = [];
-// for (let i = 0; i < 10; i++) {
-// 	projects.push(createStudent());
-// }
 ---
 
 <Layout title="q.a.w.s.e.d.site">
-	<div class="overlay text-8xl font-black">
-		<div class="overlay-content"></div>
-	</div>
-	<main class="p-4">
-		<h1 class="text-2xl pb-1">
-			Welcome to <span class="text-gradient">qawsed.site</span>
-		</h1>
-		<h2 class="text-xl font-semibold pb-5">The: {acronym.join(" ")}</h2>
-		<p class="tagline">
-			Totally inspired by <a class="" href="https://tholman.com/">Tim Holmans</a
-			>
-			<a class="" href="https://theuselessweb.com/">"The Useless Web"</a>
-		</p>
-		<div class="link-card-grid">
-			{
-				projects.map((project) => (
-					<Card
-						title={project.title}
-						body={project.description}
-						href={project.url}
-						authors={project.authors}
-						source={project.source}
-					/>
-				))
-			}
-		</div>
-	</main>
+  <div class="overlay text-8xl font-black">
+    <div class="overlay-content"></div>
+  </div>
+  <main class="p-4">
+    <h1 class="text-2xl pb-1">
+      Welcome to <span class="text-gradient">qawsed.site</span>
+    </h1>
+    <h2 class="text-xl font-semibold pb-5">The: {acronym.join(' ')}</h2>
+    <p class="tagline">
+      Totally inspired by <a class="" href="https://tholman.com/">Tim Holmans</a
+      >
+      <a class="" href="https://theuselessweb.com/">"The Useless Web"</a>
+    </p>
+    <div class="link-card-grid">
+      {
+        projects.map((project) => (
+          <Card
+            title={project.title}
+            body={project.description}
+            href={project.url}
+            authors={project.authors}
+            source={project.source}
+          />
+        ))
+      }
+    </div>
+  </main>
 
-	<script is:inline>
-		document.addEventListener("DOMContentLoaded", () => {
-			const overlay = document.querySelector(".overlay-content");
-			const countdown = [5, 4, 3, "▲", "△", "<⤵︎>", "Ready?", "GO!", "Now!!"];
-			let counter = 0;
-			const interval = setInterval(() => {
-				const content = countdown[counter];
-				overlay.innerText = content;
-				counter++;
-				if (counter === countdown.length) {
-					clearInterval(interval);
-				}
-			}, 500);
-			setTimeout(() => {
-				const overlay = document.querySelector(".overlay");
-				overlay.remove();
-			}, 5000);
-		});
-	</script>
-	<script is:inline>
-		document.addEventListener("DOMContentLoaded", () => {
-			const gridElements = document.querySelector(".link-card-grid");
-			for (let i = gridElements.length - 1; i >= 0; i--) {
-				gridElements.appendChild(gridElements.chldren[(Math.random() * i) | 0]);
-			}
-		});
-	</script>
-	<script is:inline>
-		document.addEventListener("DOMContentLoaded", () => {
-			const borderThinElements = document.querySelectorAll(".line-thin");
-			console.log(borderThinElements);
-			for (let i = borderThinElements.length - 1; i >= 0; i--) {
-				const r1 = 10 + Math.random() * 100;
-				const r2 = 200 + Math.random() * 50;
-				const r3 = 100 + Math.random() * 100;
-				borderThinElements[
-					i
-				].style.borderRadius = `${r2}px ${r1}px ${r3}px ${r1}px/${r1}px ${r3}px ${r1}px ${r2}px`;
-			}
-		});
-	</script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.querySelector('.overlay-content');
+      const countdown = [5, 4, 3, '▲', '△', '<⤵︎>', 'Ready?', 'GO!', 'Now!!'];
+      let counter = 0;
+      const interval = setInterval(() => {
+        const content = countdown[counter];
+        overlay.innerText = content;
+        counter++;
+        if (counter === countdown.length) {
+          clearInterval(interval);
+        }
+      }, 500);
+      setTimeout(() => {
+        const overlay = document.querySelector('.overlay');
+        overlay.remove();
+      }, 5000);
+    });
+  </script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridElements = document.querySelector('.link-card-grid');
+      for (let i = gridElements.length - 1; i >= 0; i--) {
+        gridElements.appendChild(gridElements.chldren[(Math.random() * i) | 0]);
+      }
+    });
+  </script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const borderThinElements = document.querySelectorAll('.line-thin');
+      console.log(borderThinElements);
+      for (let i = borderThinElements.length - 1; i >= 0; i--) {
+        const r1 = 10 + Math.random() * 100;
+        const r2 = 200 + Math.random() * 50;
+        const r3 = 100 + Math.random() * 100;
+        borderThinElements[i].style.borderRadius =
+          `${r2}px ${r1}px ${r3}px ${r1}px/${r1}px ${r3}px ${r1}px ${r2}px`;
+      }
+    });
+  </script>
 </Layout>
 <style>
-	h1 {
-		margin: 2rem 0 0 0;
-	}
-	main {
-		margin: 0 auto;
-		/* padding: 1em; */
-		max-width: 80ch;
-	}
+  h1 {
+    margin: 2rem 0 0 0;
+  }
+  main {
+    margin: 0 auto;
+    /* padding: 1em; */
+    max-width: 80ch;
+  }
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--primary-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
 
-	.overlay {
-		background-color: white; /*var(--text-on-dark-color);*/
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		top: 0;
-		left: 0;
-		position: fixed;
-		animation: fadeout 0.1s ease-in 5s forwards;
-		animation-fill-mode: forwards;
-		display: flex;
-		justify-content: center;
-	}
-	.overlay-content {
-		align-self: center;
-	}
-	@keyframes fadeout {
-		to {
-			opacity: 0;
-			/* width:0;
+  .overlay {
+    background-color: white; /*var(--text-on-dark-color);*/
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    animation: fadeout 0.1s ease-in 5s forwards;
+    animation-fill-mode: forwards;
+    display: flex;
+    justify-content: center;
+  }
+  .overlay-content {
+    align-self: center;
+  }
+  @keyframes fadeout {
+    to {
+      opacity: 0;
+      /* width:0;
         height:0;
         overflow:hidden; */
-		}
-	}
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
+    }
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
 
-		50% {
-			background-position-y: 80%;
-		}
-	}
+    50% {
+      background-position-y: 80%;
+    }
+  }
 
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: var(--primary-color);
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-	.tagline {
-		padding-bottom: 2.5rem;
-	}
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: var(--primary-color);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+  .tagline {
+    padding-bottom: 2.5rem;
+  }
 
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
+  .instructions code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
 
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-	a {
-		text-decoration: underline;
-	}
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+  a {
+    text-decoration: underline;
+  }
 </style>
