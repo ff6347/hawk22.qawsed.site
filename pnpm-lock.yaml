@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@astrojs/sitemap':
-        specifier: 3.7.0
-        version: 3.7.0
+        specifier: 3.7.1
+        version: 3.7.1
       '@astrojs/solid-js':
         specifier: 4.4.4
-        version: 4.4.4(solid-js@1.9.11)
+        version: 4.4.4(@types/node@24.12.2)(solid-js@1.9.11)
       '@astrojs/tailwind':
         specifier: 5.1.5
-        version: 5.1.5(astro@4.16.19(rollup@4.59.0)(typescript@5.9.3))(tailwindcss@3.4.19(yaml@2.8.2))
+        version: 5.1.5(astro@4.16.19(@types/node@24.12.2)(rollup@4.59.0)(typescript@5.9.3))(tailwindcss@3.4.19(yaml@2.8.2))
       astro:
         specifier: 4.16.19
-        version: 4.16.19(rollup@4.59.0)(typescript@5.9.3)
+        version: 4.16.19(@types/node@24.12.2)(rollup@4.59.0)(typescript@5.9.3)
       solid-js:
         specifier: 1.9.11
         version: 1.9.11
@@ -43,8 +43,8 @@ packages:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@astrojs/sitemap@3.7.0':
-    resolution: {integrity: sha512-+qxjUrz6Jcgh+D5VE1gKUJTA3pSthuPHe6Ao5JCxok794Lewx8hBFaWHtOnN0ntb2lfOf7gvOi9TefUswQ/ZVA==}
+  '@astrojs/sitemap@3.7.1':
+    resolution: {integrity: sha512-IzQqdTeskaMX+QDZCzMuJIp8A8C1vgzMBp/NmHNnadepHYNHcxQdGLQZYfkbd2EbRXUfOS+UDIKx8sKg0oWVdw==}
 
   '@astrojs/solid-js@4.4.4':
     resolution: {integrity: sha512-6zu9gFWEb+4V8SumlzMG3UbnXP2tVSy3eLI8cKNNPoMjcMMHK39efxHP38EPiCD0NnlTfyFh3KqaXp/2hmWh6Q==}
@@ -647,8 +647,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@17.0.45':
-    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+  '@types/node@24.12.2':
+    resolution: {integrity: sha512-A1sre26ke7HDIuY/M23nd9gfB+nrmhtYyMINbjI1zHJxYteKR6qSMX56FsmjMcDb3SMcjJg5BiRRgOCC/yBD0g==}
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
@@ -1653,9 +1653,9 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  sitemap@8.0.3:
-    resolution: {integrity: sha512-9Ew1tR2WYw8RGE2XLy7GjkusvYXy8Rg6y8TYuBuQMfIEdGcWoJpY2Wr5DzsEiL/TKCw56+YKTCCUHglorEYK+A==}
-    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+  sitemap@9.0.1:
+    resolution: {integrity: sha512-S6hzjGJSG3d6if0YoF5kTyeRJvia6FSTBroE5fQ0bu1QNxyJqhhinfUsXi9fH3MgtXODWvwo2BDyQSnhPQ88uQ==}
+    engines: {node: '>=20.19.5', npm: '>=10.8.2'}
     hasBin: true
 
   solid-js@1.9.11:
@@ -1772,6 +1772,9 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -1922,6 +1925,9 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -1960,17 +1966,17 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/sitemap@3.7.0':
+  '@astrojs/sitemap@3.7.1':
     dependencies:
-      sitemap: 8.0.3
+      sitemap: 9.0.1
       stream-replace-string: 2.0.0
-      zod: 3.25.76
+      zod: 4.3.6
 
-  '@astrojs/solid-js@4.4.4(solid-js@1.9.11)':
+  '@astrojs/solid-js@4.4.4(@types/node@24.12.2)(solid-js@1.9.11)':
     dependencies:
       solid-js: 1.9.11
-      vite: 5.4.21
-      vite-plugin-solid: 2.11.11(solid-js@1.9.11)(vite@5.4.21)
+      vite: 5.4.21(@types/node@24.12.2)
+      vite-plugin-solid: 2.11.11(solid-js@1.9.11)(vite@5.4.21(@types/node@24.12.2))
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
       - '@types/node'
@@ -1983,9 +1989,9 @@ snapshots:
       - supports-color
       - terser
 
-  '@astrojs/tailwind@5.1.5(astro@4.16.19(rollup@4.59.0)(typescript@5.9.3))(tailwindcss@3.4.19(yaml@2.8.2))':
+  '@astrojs/tailwind@5.1.5(astro@4.16.19(@types/node@24.12.2)(rollup@4.59.0)(typescript@5.9.3))(tailwindcss@3.4.19(yaml@2.8.2))':
     dependencies:
-      astro: 4.16.19(rollup@4.59.0)(typescript@5.9.3)
+      astro: 4.16.19(@types/node@24.12.2)(rollup@4.59.0)(typescript@5.9.3)
       autoprefixer: 10.4.27(postcss@8.5.8)
       postcss: 8.5.8
       postcss-load-config: 4.0.2(postcss@8.5.8)
@@ -2474,11 +2480,13 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@17.0.45': {}
+  '@types/node@24.12.2':
+    dependencies:
+      undici-types: 7.16.0
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 24.12.2
 
   '@types/unist@3.0.3': {}
 
@@ -2515,7 +2523,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.16.19(rollup@4.59.0)(typescript@5.9.3):
+  astro@4.16.19(@types/node@24.12.2)(rollup@4.59.0)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 2.13.1
       '@astrojs/internal-helpers': 0.4.1
@@ -2571,8 +2579,8 @@ snapshots:
       tsconfck: 3.1.6(typescript@5.9.3)
       unist-util-visit: 5.1.0
       vfile: 6.0.3
-      vite: 5.4.21
-      vitefu: 1.1.2(vite@5.4.21)
+      vite: 5.4.21(@types/node@24.12.2)
+      vitefu: 1.1.2(vite@5.4.21(@types/node@24.12.2))
       which-pm: 3.0.1
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -3794,9 +3802,9 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  sitemap@8.0.3:
+  sitemap@9.0.1:
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 24.12.2
       '@types/sax': 1.2.7
       arg: 5.0.2
       sax: 1.6.0
@@ -3931,6 +3939,8 @@ snapshots:
 
   typescript@5.9.3: {}
 
+  undici-types@7.16.0: {}
+
   unified@11.0.5:
     dependencies:
       '@types/unist': 3.0.3
@@ -4006,7 +4016,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plugin-solid@2.11.11(solid-js@1.9.11)(vite@5.4.21):
+  vite-plugin-solid@2.11.11(solid-js@1.9.11)(vite@5.4.21(@types/node@24.12.2)):
     dependencies:
       '@babel/core': 7.29.0
       '@types/babel__core': 7.20.5
@@ -4014,22 +4024,23 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.9.11
       solid-refresh: 0.6.3(solid-js@1.9.11)
-      vite: 5.4.21
-      vitefu: 1.1.2(vite@5.4.21)
+      vite: 5.4.21(@types/node@24.12.2)
+      vitefu: 1.1.2(vite@5.4.21(@types/node@24.12.2))
     transitivePeerDependencies:
       - supports-color
 
-  vite@5.4.21:
+  vite@5.4.21(@types/node@24.12.2):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.8
       rollup: 4.59.0
     optionalDependencies:
+      '@types/node': 24.12.2
       fsevents: 2.3.3
 
-  vitefu@1.1.2(vite@5.4.21):
+  vitefu@1.1.2(vite@5.4.21(@types/node@24.12.2)):
     optionalDependencies:
-      vite: 5.4.21
+      vite: 5.4.21(@types/node@24.12.2)
 
   web-namespaces@2.0.1: {}
 
@@ -4069,5 +4080,7 @@ snapshots:
       zod: 3.25.76
 
   zod@3.25.76: {}
+
+  zod@4.3.6: {}
 
   zwitch@2.0.4: {}

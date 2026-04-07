@@ -9,7 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/sitemap": "3.7.1",
     "@astrojs/solid-js": "4.4.4",
     "@astrojs/tailwind": "5.1.5",
     "astro": "4.16.19",
